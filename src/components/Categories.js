@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { checkStatus } from '../redux/Categories/Categories';
+import { checkStatus } from '../redux/categories/categories';
 
 // eslint-disable-next-line react/prop-types
 function Categories({ categories }) {
