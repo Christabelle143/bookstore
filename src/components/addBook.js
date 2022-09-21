@@ -1,6 +1,6 @@
 import React from 'react';
 
-function addBook() {
+function AddBook() {
   return (
     <div className="form-inputs">
       <h1>ADD A NEW BOOK</h1>
@@ -11,4 +11,4 @@ function addBook() {
     </div>
   );
 }
-export default addBook;
+export default AddBook;

@@ -9,7 +9,7 @@ import Navbar from './components/Navbar';
 import Categories from './components/Categories';
 
 function App() {
-  const state = useSelector((state)=> state)
+  const state = useSelector((state) => state);
   return (
     <>
       <Router>
@@ -17,8 +17,8 @@ function App() {
           <Navbar />
           <div>
             <Routes>
-              <Route path="/books" exact element={<Books />} />
-              <Route path="/categories" element={<Categories />} />
+              <Route path="/books" exact element={<Books bookList={state.books} />} />
+              <Route path="/categories" element={<Categories categories={state.categories} />} />
             </Routes>
           </div>
         </div>

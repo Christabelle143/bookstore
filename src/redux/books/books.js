@@ -2,21 +2,21 @@
 const ADD_BOOK = 'bookstore / books / ADD_BOOK';
 const REMOVE_BOOK = 'bookstore / books / REMOVE_BOOK';
 const initialState = [
-    {
-        id: 1,
-        title: 'THE HUNGER GAMES',
-        author: 'Suzanne Collins',
-      },
-      {
-        id: 2,
-        title: 'DUNE',
-        author: 'Frank Herbert',
-      },
-      {
-        id: 3,
-        title: 'Capital in the Twenty-first Century',
-        author: 'Suzanne Collins',
-      },
+  {
+    id: 1,
+    title: 'THE HUNGER GAMES',
+    author: 'Suzanne Collins',
+  },
+  {
+    id: 2,
+    title: 'DUNE',
+    author: 'Frank Herbert',
+  },
+  {
+    id: 3,
+    title: 'Capital in the Twenty-first Century',
+    author: 'Suzanne Collins',
+  },
 ];
 // Action Creators
 export const addBook = (book) => ({
