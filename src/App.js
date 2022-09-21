@@ -1,13 +1,15 @@
 /* eslint-disable import/no-named-as-default */
 /* eslint-disable import/no-named-as-default-member */
+import { useSelector } from 'react-redux';
 import React from 'react';
 import './index.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Book from './components/Book';
+import Books from './components/Books';
 import Navbar from './components/Navbar';
 import Categories from './components/Categories';
 
 function App() {
+  const state = useSelector((state)=> state)
   return (
     <>
       <Router>
@@ -15,7 +17,7 @@ function App() {
           <Navbar />
           <div>
             <Routes>
-              <Route path="/book" exact element={<Book />} />
+              <Route path="/books" exact element={<Books />} />
               <Route path="/categories" element={<Categories />} />
             </Routes>
           </div>
