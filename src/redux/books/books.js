@@ -12,7 +12,7 @@ export const removeBook = (index) => ({
   type: REMOVE_BOOK,
   payload: index,
 });
-//reducer
+// reducer
 const booksReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_BOOK:
