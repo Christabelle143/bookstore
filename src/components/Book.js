@@ -1,7 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { removeBook } from '../redux/books/books';
-/* eslint-disable react/prop-types */
 
 function Book(props) {
   const { title, author, id } = props;

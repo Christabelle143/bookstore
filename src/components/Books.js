@@ -1,7 +1,3 @@
-/* eslint-disable import/extensions */
-/* eslint-disable react/jsx-first-prop-new-line */
-/* eslint-disable react/prop-types */
-/* eslint-disable  react/destructuring-assignment */
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Book from './Book';

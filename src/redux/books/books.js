@@ -1,12 +1,9 @@
-// Define action types for adding and removing a book.
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
 const ADD_BOOK = 'bookstore / books / ADD_BOOK';
 const REMOVE_BOOK = 'bookstore / books / REMOVE_BOOK';
-// const APP_ID = 'WLWRGsXNCux9kjlYUIID';
 const FETCH_BOOKS = 'bookstore/books/FETCH_BOOKS';
 
-// Action Creators
 const addBook = createAsyncThunk(ADD_BOOK, async (book, { dispatch }) => {
   await fetch('https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/WLWRGsXNCux9kjlYUIID/books/', {
     method: 'POST',
@@ -40,7 +37,6 @@ const fetchBooks = createAsyncThunk(FETCH_BOOKS, async (args, { dispatch }) => {
     type: FETCH_BOOKS,
     payload: books,
   });
-  // console.log(books);
   return books;
 });
 
@@ -60,7 +56,6 @@ const removeBook = createAsyncThunk(REMOVE_BOOK, async (id, { dispatch }) => {
     id,
   });
 });
-// reducer
 const booksReducer = (state = [], action) => {
   switch (action.type) {
     case ADD_BOOK: {
