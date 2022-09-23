@@ -9,19 +9,23 @@ import AddBook from './addBook';
 import { fetchBooks } from '../redux/books/books';
 
 function Books() {
-  const bookList = useSelector((state) => state.books);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchBooks());
-  }, [bookList, dispatch]);
+  }, []);
+
+  const bookList = useSelector((state) => state.books);
 
   return (
-    <div>
-      {bookList.map((book) => (
-        <Book key={book.item_id} title={book.title} author={book.author} id={book.item_id} />
-      ))}
+    <>
+      <ul>
+        {bookList.map((book) => {
+          const { author, title, id } = book;
+          return <Book key={`bk-${id}`} title={title} author={author} id={id} />;
+        })}
+      </ul>
       <AddBook />
-    </div>
+    </>
   );
 }
 Books.defaultProps = {

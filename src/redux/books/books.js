@@ -6,9 +6,8 @@ const REMOVE_BOOK = 'bookstore / books / REMOVE_BOOK';
 // const APP_ID = 'WLWRGsXNCux9kjlYUIID';
 const FETCH_BOOKS = 'bookstore/books/FETCH_BOOKS';
 
-const initialState = [];
 // Action Creators
-const addBook = createAsyncThunk(ADD_BOOK, async (book) => {
+const addBook = createAsyncThunk(ADD_BOOK, async (book, { dispatch }) => {
   await fetch('https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/WLWRGsXNCux9kjlYUIID/books/', {
     method: 'POST',
     headers: {
@@ -18,9 +17,12 @@ const addBook = createAsyncThunk(ADD_BOOK, async (book) => {
     },
     body: JSON.stringify(book),
   });
-  return book;
+  dispatch({
+    type: ADD_BOOK,
+    book,
+  });
 });
-const fetchBooks = createAsyncThunk(FETCH_BOOKS, async () => {
+const fetchBooks = createAsyncThunk(FETCH_BOOKS, async (args, { dispatch }) => {
   const response = await fetch('https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/WLWRGsXNCux9kjlYUIID/books/', {
     method: 'GET',
   });
@@ -34,10 +36,15 @@ const fetchBooks = createAsyncThunk(FETCH_BOOKS, async () => {
       id, title, author, category,
     });
   });
+  dispatch({
+    type: FETCH_BOOKS,
+    payload: books,
+  });
+  // console.log(books);
   return books;
 });
 
-const removeBook = createAsyncThunk(REMOVE_BOOK, async (id) => {
+const removeBook = createAsyncThunk(REMOVE_BOOK, async (id, { dispatch }) => {
   await fetch(`https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/WLWRGsXNCux9kjlYUIID/books/${id}`,
     {
       method: 'DELETE',
@@ -48,19 +55,26 @@ const removeBook = createAsyncThunk(REMOVE_BOOK, async (id) => {
         item_id: id,
       }),
     });
-  return id;
+  dispatch({
+    type: REMOVE_BOOK,
+    id,
+  });
 });
 // reducer
-const booksReducer = (state = initialState, action) => {
+const booksReducer = (state = [], action) => {
   switch (action.type) {
-    case ADD_BOOK:
-      return [...state, action.payload];
-    case FETCH_BOOKS:
+    case ADD_BOOK: {
+      return [...state, action.book];
+    }
+    case FETCH_BOOKS: {
       return [...action.payload];
-    case REMOVE_BOOK:
-      return [...state.filter((book) => book.id !== action.payload)];
-    default:
+    }
+    case REMOVE_BOOK: {
+      return state.filter((book) => book.id !== action.id);
+    }
+    default: {
       return state;
+    }
   }
 };
 export default booksReducer;
