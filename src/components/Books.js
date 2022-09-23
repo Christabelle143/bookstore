@@ -6,7 +6,7 @@ import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Book from './Book';
 import AddBook from './addBook';
-import { fetchBooks } from '../../redux/books/book';
+import { fetchBooks } from '../redux/books/books';
 
 function Books() {
   const bookList = useSelector((state) => state.books);
