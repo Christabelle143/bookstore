@@ -1,50 +1,42 @@
+import { v4 as uuidv4 } from 'uuid';
 import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { addBook } from '../redux/books/books';
 
-function AddBook() {
-  const bookList = useSelector((state) => state);
+const AddBook = () => {
   const dispatch = useDispatch();
-  const [state, setState] = useState({ title: '', author: '' });
-
-  const read = (e) => {
-    const input = e.target;
-    setState({
-      ...state,
-      [input.name]: input.value,
-    });
-  };
+  const [book, setBook] = useState({
+    title: '', author: '', item_id: '', category: 'fiction',
+  });
 
   const submit = (e) => {
     e.preventDefault();
-
-    if (state.title && state.author) {
-      let maxID = 0;
-      for (let i = 0; i < bookList.books.length; i += 1) {
-        if (bookList.books[i].id > maxID) {
-          maxID = bookList.books[i].id;
-        }
-      }
-
-      dispatch(
-        addBook({
-          id: maxID + 1,
-          title: state.title,
-          author: state.author,
-        }),
-      );
-      setState({ title: '', author: '' });
+    if (book.title && book.author) {
+      dispatch(addBook(book));
+      setBook({
+        title: '', author: '', item_id: '', category: 'fiction',
+      });
     }
   };
+
+  const read = (e) => {
+    setBook({
+      ...book,
+      item_id: uuidv4(),
+      [e.target.name]: e.target.value,
+    });
+  };
+
   return (
     <div className="form-inputs">
       <h1>ADD A NEW BOOK</h1>
-      <form className="inputs" onSubmit={submit}>
-        <input type="text" name="title" placeholder="Bookk-title" value={state.title} onChange={read} />
-        <input type="text" name="author" placeholder="Book-author" value={state.author} onChange={read} />
-        <button type="submit">Add</button>
+      <form className="inputs">
+        <input type="text" name="title" placeholder="Book-title" value={book.title} onChange={read} />
+        <input type="text" name="author" placeholder="Book-author" value={book.author} onChange={read} />
+        <button type="submit" onClick={submit}>Add</button>
       </form>
     </div>
   );
-}
+};
+
 export default AddBook;

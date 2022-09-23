@@ -1,20 +1,27 @@
-/* eslint-disable import/extensions */
-/* eslint-disable react/jsx-first-prop-new-line */
-import React from 'react';
-/* eslint-disable react/prop-types */
-/* eslint-disable  react/destructuring-assignment */
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import Book from './Book';
 import AddBook from './addBook';
+import { fetchBooks } from '../redux/books/books';
 
-function Books(props) {
-  const { bookList } = props;
+function Books() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchBooks());
+  }, []);
+
+  const bookList = useSelector((state) => state.books);
+
   return (
-    <div>
-      {bookList.map((book) => (
-        <Book key={book.id} title={book.title} author={book.author} id={book.id} />
-      ))}
+    <>
+      <ul>
+        {bookList.map((book) => {
+          const { author, title, id } = book;
+          return <Book key={`bk-${id}`} title={title} author={author} id={id} />;
+        })}
+      </ul>
       <AddBook />
-    </div>
+    </>
   );
 }
 Books.defaultProps = {
