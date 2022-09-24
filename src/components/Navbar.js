@@ -5,11 +5,11 @@ import { FaUserAlt } from 'react-icons/fa';
 function Navbar() {
   return (
     <header>
+      <h1>Bookstore CMS</h1>
       <nav>
-        <h1 className="first">Bookstore CMS</h1>
         <ul>
           <li>
-            <Link to="/">Books</Link>
+            <Link to="/Book">Book</Link>
           </li>
           <li>
             <Link to="/Categories">Categories</Link>
