@@ -40,20 +40,20 @@ header {
   margin-top: 2rem;
   position: relative;
   background-color: #ffff;
-  width: 80.5rem;
-  height: 5.938rem;
-  border-bottom: 1px solid #e8e8e8;
+  width: 80rem;
+  height: 6rem;
+  border-bottom: 2px solid #e8e8e8;
   padding: 0 5rem;
 }
 
-.user-container {
+.user-profile {
   position: absolute;
   cursor: pointer;
-  right: 17%;
+  right: 20%;
   font-size: 1rem;
   color: #0290ff;
   border: 1px solid #e8e8e8;
-  border-radius: 50%;
+  border-radius: 80%;
   padding: 2px 5px;
 }
 
@@ -194,7 +194,7 @@ button[type='submit'] {
 }
 
 .line {
-  border-right: 1px solid #e8e8e8;
+  border-right: 2px solid #e8e8e8;
 }
 
 .view-progress {

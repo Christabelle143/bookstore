@@ -15,7 +15,7 @@ function Navbar() {
             <Link to="/Categories">Categories</Link>
           </li>
         </ul>
-        <div className="user-container">
+        <div className="user-profile">
           <FaUserAlt />
         </div>
       </nav>
