@@ -14,13 +14,16 @@ function Books() {
 
   return (
     <>
-      <ul>
-        {bookList.map((book) => {
-          const { author, title, id } = book;
-          return <Book key={`bk-${id}`} title={title} author={author} id={id} />;
-        })}
-      </ul>
-      <AddBook />
+      <div className="book-list">
+        <ul>
+          {bookList.map((book) => {
+            const { author, title, id } = book;
+            return <Book key={`bk-${id}`} title={title} author={author} id={id} />;
+          })}
+        </ul>
+        <hr />
+        <AddBook />
+      </div>
     </>
   );
 }

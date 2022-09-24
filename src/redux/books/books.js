@@ -14,9 +14,15 @@ const addBook = createAsyncThunk(ADD_BOOK, async (book, { dispatch }) => {
     },
     body: JSON.stringify(book),
   });
+  const id = book.item_id;
+  const bk = {
+    ...book,
+    id,
+  };
   dispatch({
     type: ADD_BOOK,
     book,
+    bk,
   });
 });
 const fetchBooks = createAsyncThunk(FETCH_BOOKS, async (args, { dispatch }) => {

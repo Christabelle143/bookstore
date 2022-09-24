@@ -1,21 +1,25 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { FaUserAlt } from 'react-icons/fa';
 
 function Navbar() {
   return (
-    <div>
+    <header>
+      <h1>Bookstore CMS</h1>
       <nav>
-        <h1>Bookstore CMS</h1>
         <ul>
           <li>
-            <Link to="/">Books</Link>
+            <Link to="/Books">Books</Link>
           </li>
           <li>
             <Link to="/Categories">Categories</Link>
           </li>
         </ul>
+        <div className="user-profile">
+          <FaUserAlt />
+        </div>
       </nav>
-    </div>
+    </header>
   );
 }
 export default Navbar;
