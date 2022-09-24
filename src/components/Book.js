@@ -17,12 +17,11 @@ function Book(props) {
         <div>
           <h2 className="book-title">{title}</h2>
           <p className="">{author}</p>
-          <span className="book-author">Elijah Odjegba</span>
           <div className="links-container">
             <ul>
               <li><a href="./" className="btn-1 line">Comments</a></li>
+              <li><a href="./" id={id} className="btn-1 line" onClick={deleteBook}>Remove</a></li>
               <li><a href="./" className="btn-1 line">Edit</a></li>
-              <li><a href="./" id={id} className="remove-btn" onClick={deleteBook}>Remove</a></li>
             </ul>
           </div>
         </div>
@@ -37,7 +36,7 @@ function Book(props) {
             value={50}
           />
           <div className="numerics">
-            <span className="numbers">60%</span>
+            <span className="number">60%</span>
             <span className="completed">completed</span>
           </div>
         </div>

@@ -28,12 +28,12 @@ const AddBook = () => {
   };
 
   return (
-    <div className="form-inputs">
-      <h1>ADD A NEW BOOK</h1>
-      <form className="inputs">
-        <input type="text" name="title" placeholder="Book-title" value={book.title} onChange={read} />
-        <input type="text" name="author" placeholder="Book-author" value={book.author} onChange={read} />
-        <button type="submit" onClick={submit}>Add</button>
+    <div className="Add-book">
+      <h1 className="form-heading">ADD A NEW BOOK</h1>
+      <form className="add-form" onSubmit={submit}>
+        <input type="text" name="title" placeholder="Book-Title" value={book.title} onChange={read} />
+        <input type="text" name="author" placeholder="Book-Author" value={book.author} onChange={read} />
+        <button type="submit">Add</button>
       </form>
     </div>
   );

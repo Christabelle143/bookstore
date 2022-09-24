@@ -5,7 +5,6 @@
   padding: 0;
   font-family: 'Roboto', sans-serif;
   box-sizing: border-box;
-  overflow-x: hidden;
 }
 body {
   display: flex;
@@ -36,11 +35,12 @@ ul {
 header {
   display: flex;
   align-items: center;
+  gap: 12px;
   margin-bottom: 1.5rem;
   margin-top: 2rem;
   position: relative;
   background-color: #ffff;
-  width: 92.5rem;
+  width: 80.5rem;
   height: 5.938rem;
   border-bottom: 1px solid #e8e8e8;
   padding: 0 5rem;
@@ -124,12 +124,12 @@ a.active {
   font-weight: 300;
 }
 
-.add-form {
+ .add-form {
   display: flex;
   justify-content: space-between;
   margin-top: 1.2rem;
   margin-bottom: 16.5rem;
-}
+} 
 
 input[type='text'] {
   width: 41.5rem;
@@ -138,34 +138,16 @@ input[type='text'] {
   border: 1px solid #e8e8e8;
 }
 
-::placeholder {
+ ::placeholder {
   font-size: 1rem;
   padding-left: 1rem;
   letter-spacing: -0.15px;
-}
+} 
 
-select {
-  width: 17.813rem;
-  height: 2.813rem;
-  border-radius: 4px;
-  border: 1px solid #e8e8e8;
-  padding: 0 0.5rem;
-  font-size: 1rem;
-  color: #c4c4c4;
-  letter-spacing: -0.15px;
-}
-
-option {
-  color: #121212;
-  letter-spacing: -0.15px;
-}
 
 button[type='submit'] {
-  width: 8.938rem;
-  font-family: 'RobotoSlab', sans-serif;
-  font-size: 0.813rem;
-  font-weight: bold;
-  letter-spacing: 0.5px;
+  width: 9rem;
+  font-family: 'Roboto', sans-serif;
   text-align: center;
   color: #fff;
   padding: 0.801rem 1.188rem 0.886rem 1.375rem;
@@ -176,9 +158,7 @@ button[type='submit'] {
 }
 
 .btn-1 {
-  border: none;
-  background: none;
-  font-family: 'RobotoSlab', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 0.875rem;
   font-weight: 300;
   color: #4386bf;
@@ -195,7 +175,7 @@ button[type='submit'] {
 }
 
 .progressBar {
-  height: 50px;
+  height: 120px;
 }
 
 .numerics {
@@ -223,7 +203,7 @@ button[type='submit'] {
 
 .chapter-title {
   opacity: 0.5;
-  font-family: 'RobotoSlab', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 0.813rem;
   font-weight: 300;
   color: #121212;
@@ -231,7 +211,7 @@ button[type='submit'] {
 }
 
 .chapter-number {
-  font-family: 'RobotoSlab', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 1rem;
   font-weight: 300;
   letter-spacing: -0.4px;
