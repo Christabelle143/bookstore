@@ -5,7 +5,7 @@ function Navbar() {
   return (
     <div>
       <nav>
-        <h1>Bookstore CMS</h1>
+        <h1 className="first">Bookstore CMS</h1>
         <ul>
           <li>
             <Link to="/">Books</Link>
