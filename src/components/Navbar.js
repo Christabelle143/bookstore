@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { FaUserAlt } from 'react-icons/fa';
 
 function Navbar() {
   return (
-    <div>
+    <header>
       <nav>
         <h1 className="first">Bookstore CMS</h1>
         <ul>
@@ -14,8 +15,11 @@ function Navbar() {
             <Link to="/Categories">Categories</Link>
           </li>
         </ul>
+        <div className="user-container">
+          <FaUserAlt />
+        </div>
       </nav>
-    </div>
+    </header>
   );
 }
 export default Navbar;
