@@ -1,37 +1,40 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto+Mono:wght@500&display=swap');
 
-*{
+* {
   margin: 0;
   padding: 0;
   font-family: 'Roboto', sans-serif;
   box-sizing: border-box;
 }
+
 body {
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: #f5f6fa;
 }
-.first{
+
+.first {
   margin: 0;
   font-size: 40px;
   font-weight: 700;
-  color: rgb(80, 80, 255);;
+  color: rgb(80, 80, 255);
 }
 
 a {
-   text-decoration: none;
-   color: #add8e6;
-   opacity: 0.8;
+  text-decoration: none;
+  color: #add8e6;
+  opacity: 0.8;
 }
 
 a:hover {
   color: var(--text-hover);
-} 
+}
 
 ul {
   list-style: none;
 }
+
 header {
   display: flex;
   align-items: center;
@@ -80,14 +83,14 @@ header nav ul li {
   font-size: 0.813rem;
 }
 
-.links-container ul {
+.links ul {
   display: flex;
   list-style-type: none;
   padding: 0;
   margin-top: 1.5rem;
 }
 
-.links-container ul li {
+.links ul li {
   margin-right: 1rem;
 }
 
@@ -124,12 +127,19 @@ a.active {
   font-weight: 300;
 }
 
- .add-form {
+.add-form {
   display: flex;
   justify-content: space-between;
   margin-top: 1.2rem;
   margin-bottom: 16.5rem;
-} 
+}
+
+.form-heading {
+  font-size: 1.25rem;
+  font-weight: bold;
+  letter-spacing: -0.18px;
+  color: #888;
+}
 
 input[type='text'] {
   width: 41.5rem;
@@ -138,12 +148,11 @@ input[type='text'] {
   border: 1px solid #e8e8e8;
 }
 
- ::placeholder {
+::placeholder {
   font-size: 1rem;
   padding-left: 1rem;
   letter-spacing: -0.15px;
-} 
-
+}
 
 button[type='submit'] {
   width: 9rem;
@@ -157,12 +166,27 @@ button[type='submit'] {
   cursor: pointer;
 }
 
-.btn-1 {
+.btn1 {
   font-family: 'Roboto', sans-serif;
   font-size: 0.875rem;
   font-weight: 300;
   color: #4386bf;
   padding-left: 0;
+  cursor: pointer;
+}
+
+.btn2 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.813rem;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  text-align: center;
+  color: #fff;
+  margin-top: 1.5rem;
+  padding: 0.438rem 1.188rem 0.5rem 1.375rem;
+  border-radius: 3px;
+  background-color: #0290ff;
+  border: none;
   cursor: pointer;
 }
 
@@ -175,7 +199,7 @@ button[type='submit'] {
 }
 
 .progressBar {
-  height: 120px;
+  height: 100px;
 }
 
 .numerics {
@@ -183,7 +207,7 @@ button[type='submit'] {
   flex-flow: column;
 }
 
-.number {
+.percentage {
   font-size: 2rem;
   margin: 5px 1rem;
 }
@@ -218,30 +242,8 @@ button[type='submit'] {
   color: #121212;
 }
 
-.btn-2 {
-  font-family: 'Roboto', sans-serif;
-  font-size: 0.813rem;
-  font-weight: 300;
-  letter-spacing: 0.5px;
-  text-align: center;
-  color: #fff;
-  margin-top: 1.5rem;
-  padding: 0.438rem 1.188rem 0.5rem 1.375rem;
-  border-radius: 3px;
-  background-color: #0290ff;
-  border: none;
-  cursor: pointer;
-}
-
 hr {
   color: #e8e8e8;
   margin-top: 2.5rem;
   margin-bottom: 1.5rem;
-}
-
-.form-heading {
-  font-size: 1.25rem;
-  font-weight: bold;
-  letter-spacing: -0.18px;
-  color: #888;
 }

@@ -17,11 +17,11 @@ function Book(props) {
         <div>
           <h2 className="book-title">{title}</h2>
           <p className="">{author}</p>
-          <div className="links-container">
+          <div className="links">
             <ul>
-              <li><a href="./" className="btn-1 line">Comments</a></li>
-              <li><a href="./" id={id} className="btn-1 line" onClick={deleteBook}>Remove</a></li>
-              <li><a href="./" className="btn-1 line">Edit</a></li>
+              <li><a href="./" className="btn1 line">Comments</a></li>
+              <li><a href="./" id={id} className="btn1 line" onClick={deleteBook}>Remove</a></li>
+              <li><a href="./" className="btn1 line">Edit</a></li>
             </ul>
           </div>
         </div>
@@ -36,14 +36,14 @@ function Book(props) {
             value={50}
           />
           <div className="numerics">
-            <span className="number">60%</span>
+            <span className="percentage">60%</span>
             <span className="completed">completed</span>
           </div>
         </div>
         <div className="view-progress">
           <span className="chapter-title">Current chapter</span>
-          <h3 className="chapter-number">Chapter 10</h3>
-          <button type="button" className="btn-2">
+          <h3 className="chapter-number">Chapter 2</h3>
+          <button type="button" className="btn2">
             Update progress
           </button>
         </div>
