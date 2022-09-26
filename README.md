@@ -15,7 +15,7 @@
 
 
 ## Screenshot 📸
-  ![screenshot](images/bookstore.png)
+  ![screenshot](bookstore.png)
 
 ## Live Demo 🔗
 
